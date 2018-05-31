@@ -1,0 +1,25 @@
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
+
+@Component({
+  selector: 'app-payment',
+  templateUrl: './payment.component.html',
+  styleUrls: ['./payment.component.scss']
+})
+export class PaymentComponent implements OnInit {
+  paymentForm:FormGroup;
+  constructor(private fb:FormBuilder) { }
+
+  ngOnInit() {
+    this.paymentForm = this.fb.group({
+      cardNumber: [''],
+      cardExpDate: [''],
+      cardCvv: ['', [<any>Validators.required, <any>Validators.minLength(3), <any>Validators.maxLength(4)]] 
+    });
+ 
+  }
+  save(){
+console.log(this.paymentForm.value);
+  }
+
+}

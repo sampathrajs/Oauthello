@@ -1,0 +1,50 @@
+import { Component, OnInit } from '@angular/core';
+import {newaccount} from '../Model/newaccount';
+import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
+import {PasswordValidation} from '../pipes/passwordvalidation';
+
+@Component({
+  selector: 'app-newaccount',
+  templateUrl: './newaccount.component.html',
+  styleUrls: ['./newaccount.component.scss']
+})
+export class NewaccountComponent implements OnInit {
+  lat: number = 13.058231;
+  lng: number = 80.261135;
+  minZoom:number=15;  
+  newaccountForm: FormGroup;
+
+  constructor(private fb:FormBuilder) { 
+    
+  }
+  description:string;
+firstname:string;
+surname:string;
+email:string;
+password:string;
+m_number:number;
+professional:boolean;
+sn_number:number;
+fees:number;
+
+  ngOnInit() {
+    
+    this.newaccountForm=this.fb.group({
+      description:['',[Validators.required,Validators.minLength(10)]],
+      firstname:['',[Validators.required]],      
+      surname:['',[Validators.required]], 
+      email:['',[Validators.required,Validators.email]], 
+      password:['',[Validators.required,Validators.minLength(5)]], 
+      confirmPassword:['',[Validators.required,Validators.minLength(5)]], 
+      m_number:['',[Validators.required]], 
+      professional:['',[Validators.required]], 
+      sn_number:['',[Validators.required]], 
+      fees:['',[Validators.required]]
+
+    },{validator:PasswordValidation.MatchPassword})
+   }
+   save(){
+     
+   }
+
+}

@@ -1,0 +1,25 @@
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, FormControl, Validator, FormArray, Validators } from '@angular/forms';
+
+@Component({
+  selector: 'app-verifyemail',
+  templateUrl: './verifyemail.component.html',
+  styleUrls: ['./verifyemail.component.css']
+})
+export class VerifyemailComponent implements OnInit {
+  yourEmailID = 'm.sathishkumar@dsrc.co.in';
+  verifyMailFormGroup : FormGroup;
+  
+
+  constructor(private fb : FormBuilder) { }
+
+  ngOnInit() {
+      this.verifyMailFormGroup = this.fb.group({
+        verifymail : ['', [Validators.required, Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)]]
+      })
+  }
+
+  ConfirmMail(){
+    console.log(this.verifyMailFormGroup.get('verifymail').value);
+  }
+}

@@ -1,0 +1,223 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header theme" data-background-color="red">
+            <h4 class="title">Create an Oathello Account</h4>
+
+          </div>
+          <div class="card-content">
+            <form novalidate (ngSubmit)="save()" [formGroup]="newaccountForm">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="containerimg">
+                    <img class="img-responsive image" style="height:200px;width:300px ;margin-left:20px" (click)="picImage()" src="../assets/img/faces/marc.jpg"
+                      id="profile-pic" />
+                    <div class="middle">
+                      <div class="text" (click)="picImage()">
+                        <strong> Click me to change </strong>
+                      </div>
+                    </div>
+                  </div>
+                  <input class="file-upload" type="file" accept="image/*" style="display:none" (change)=" readURL($event)" />
+                </div>
+                <div class="col-md-8" style="margin-left:-10px">
+                  <div class="form-group">
+                    <label>Description</label>
+                    <textarea class="form-control" rows="5" formControlName="description" id="description"></textarea>
+                  </div>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="input-group">
+                    <span class="input-group-addon">
+                      <i class="material-icons">person</i>
+                    </span>
+                    <input type="text" class="form-control" formControlName="firstname" id="firstname" placeholder="First Name">
+                    <span class="help-block" style="color:red" *ngIf="(newaccountForm.get('firstname').touched || newaccountForm.get('firstname').dirty)
+                    && newaccountForm.get('firstname').errors">
+                      <span *ngIf="newaccountForm.get('firstname').errors.required">
+                        Please enter first name.
+                      </span>
+                    </span>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="input-group">
+                    <span class="input-group-addon">
+                      <i class="material-icons">person</i>
+                    </span>
+                    <input type="text" class="form-control" formControlName="surname" id="surname" placeholder="SurName">
+                    <span class="help-block" style="color:red" *ngIf="(newaccountForm.get('surname').touched || newaccountForm.get('surname').dirty)
+                    && newaccountForm.get('surname').errors">
+                      <span *ngIf="newaccountForm.get('surname').errors.required">
+                        Please enter Surname.
+                      </span>
+                    </span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <span class="input-group-addon">
+                      <i class="material-icons">email</i>
+                    </span>
+                    <input type="text" class="form-control" formControlName="email" id="email" placeholder="Email">
+                    <span class="help-block" style="color:red" *ngIf="(newaccountForm.get('email').touched || newaccountForm.get('email').dirty)
+                    && newaccountForm.get('email').errors">
+                      <span *ngIf="newaccountForm.get('email').errors.required">
+                        Please enter Email.
+                      </span>
+                      <span *ngIf="newaccountForm.get('email').errors.pattern">
+                        Please enter valid Email.
+                      </span>
+                    </span>
+
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <span class="input-group-addon">
+                      <i class="material-icons">visibility</i>
+                    </span>
+
+                    <input passwordToggle type="password" class="form-control" formControlName="password" id="password" placeholder="Password">
+                    <span class="help-block" style="color:red" *ngIf="(newaccountForm.get('password').touched || newaccountForm.get('password').dirty)
+                    && newaccountForm.get('password').errors">
+                      <span *ngIf="newaccountForm.get('password').errors.required">
+                        Please enter Password.
+                      </span>
+                      <span *ngIf="newaccountForm.get('password').errors.minlength">
+                        Please enter atleast 5 charactor.
+                      </span>
+                    </span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <span class="input-group-addon">
+                      <i class="material-icons">visibility</i>
+                    </span>
+                    <input passwordToggle type="password" class="form-control" formControlName="confirmPassword" id="confirmPassword" placeholder="Confirm Password">
+                    <span class="help-block" style="color:red" *ngIf="(newaccountForm.get('confirmPassword').touched || newaccountForm.get('confirmPassword').dirty)
+                    && newaccountForm.get('confirmPassword').errors">
+                      <span *ngIf="newaccountForm.get('confirmPassword').errors.required">
+                        Please enter confirmPassword.
+                      </span>
+                      <span *ngIf="newaccountForm.get('confirmPassword').errors.MatchPassword">
+                        Please enter same password
+                      </span>
+                    </span>
+                  </div>
+
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <span class="input-group-addon">
+                      <i class="material-icons">phone_iphone</i>
+                    </span>
+                    <input type="text" class="form-control" formControlName="m_number" id="m_number" placeholder="Mobile Number">
+                    <span class="help-block" style="color:red" *ngIf="(newaccountForm.get('m_number').touched || newaccountForm.get('m_number').dirty)
+                    && newaccountForm.get('m_number').errors">
+                      <span *ngIf="newaccountForm.get('m_number').errors.required">
+                        Please enter Mobile Number.
+                      </span>
+                      <span *ngIf="newaccountForm.get('m_number').errors.minlength">
+                        Please enter atleast 10 charactor.
+                      </span>
+                    </span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <span class="input-group-addon">
+                      <i class="material-icons">person</i>
+                    </span>
+                    <input type="number" class="form-control" formControlName="sn_number" id="sn_number" placeholder=" Solicitor / Notary number here">
+                    <span class="help-block" style="color:red" *ngIf="(newaccountForm.get('sn_number').touched || newaccountForm.get('sn_number').dirty)
+                    && newaccountForm.get('sn_number').errors">
+                      <span *ngIf="newaccountForm.get('sn_number').errors.required">
+                        Please enter Solicitor / Notary number.
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div style="margin-left:20px;">
+                    <label>Are you Solicitor or Notary Please select here:</label>
+                    <div class="row">
+
+                      <ul class="nav nav-pills nav-pills-info">
+                        <li class="active">
+                          <a href="#pill2" data-toggle="tab" name="professional" value="solicitor" (click)="setProfessional('solicitor')">solicitor</a>
+                        </li>
+                        <li style="margin-left:100px;">
+                          <a href="#pill3" data-toggle="tab" name="professional" value="notary" (click)="setProfessional('notary')">notary</a>
+                        </li>
+                      </ul>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <span class="input-group-addon">
+                      <i class="material-icons">attach_money</i>
+                    </span>
+                    <input type="number" class="form-control" formControlName="fees" id="fees" placeholder="Professional fee per document">
+                    <span class="help-block" style="color:red" *ngIf="(newaccountForm.get('fees').touched || newaccountForm.get('fees').dirty)
+                    && newaccountForm.get('fees').errors">
+                      <span *ngIf="newaccountForm.get('fees').errors.required">
+                        Please enter Fees details.
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <hr>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Pick your work location</label>
+                    <input class="form-control" type="text" formControlName="address" placeholder="Choose your address on map or type your address"
+                      (ngmodel)="address" id="address">
+                    <div class="form-group form-black label-floating is-empty">
+                      <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="minZoom" style="height:300px" (mapClick)="placeMarker($event)">
+                        <agm-marker [latitude]="latitude" [longitude]="longitude">
+                          <agm-info-window>
+                            <strong>{{Address}}</strong>
+                          </agm-info-window>
+                        </agm-marker>
+                      </agm-map>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="text-center">
+                <button type="submit" class="btn" style="color:white;background-color:#C3282F" (click)="save()" [disabled]="!newaccountForm.valid">Create Account</button>
+              </div>
+              <div class="text-center">
+                <label>Already have an account?</label>
+              </div>
+              <div class="text-center">
+                <a href="">Sign In</a>
+              </div>
+              <div class="clearfix"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-book-oathello',
+  templateUrl: './book-oathello.component.html',
+  styleUrls: ['./book-oathello.component.css']
+})
+export class BookOathelloComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}

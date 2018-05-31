@@ -1,0 +1,73 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="card">
+      <div class="row">
+        <div class="col-md-2  text-center">
+            <i class="material-icons">keyboard_arrow_left</i><label><h3><strong>Back</strong></h3></label>
+        </div>
+        <div class="col-md-10 text-center">
+            <label><h3><strong>To search & provide a job for Solicitor or Notary</strong></h3></label>
+          </div>
+      </div>
+      <div class="card-content">
+        <div class="row">
+          <form novalidate (ngSubmit)="save()" [formGroup]="bookoauthelloForm">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="type">Type</label>
+                <select class="form-control" id="type" formControlName="type">
+                  <option value="solicitor">Solicitor</option>
+                  <option value="notary">Notary</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Documents</label>
+                <input type="text" class="form-control" formControlName="documents" id="documents">
+                <span class="help-block" style="color:red" *ngIf="(bookoauthelloForm.get('documents').touched || bookoauthelloForm.get('documents').dirty)
+                    && bookoauthelloForm.get('documents').errors">
+                  <span *ngIf="bookoauthelloForm.get('documents').errors.required">
+                    Please enter Documents Details.
+                  </span>
+                </span>
+              </div>
+              <div class="form-group">
+                <label>Exhibits</label>
+                <input type="text" class="form-control" formControlName="exhibits" id="exhibits">
+                <span class="help-block" style="color:red" *ngIf="(bookoauthelloForm.get('exhibits').touched || bookoauthelloForm.get('exhibits').dirty)
+                    && bookoauthelloForm.get('exhibits').errors">
+                  <span *ngIf="bookoauthelloForm.get('exhibits').errors.required">
+                    Please enter Exhibits Details.
+                  </span>
+                </span>
+              </div>
+              <div class="form-group">
+                <label>Notes</label>
+                <textarea placeholder="You can leave notes here ..." class="form-control" rows="5" formControlName="notes" id="notes"></textarea>
+                <span class="help-block" style="color:red" *ngIf="(bookoauthelloForm.get('notes').touched || bookoauthelloForm.get('notes').dirty)
+                    && bookoauthelloForm.get('notes').errors">
+                  <span *ngIf="bookoauthelloForm.get('notes').errors.required">
+                    Please enter Notes Details.
+                  </span>
+                </span>
+              </div>
+              <div class="text-center">
+                  <button type="submit" class="btn buttonColor" [disabled]="!bookoauthelloForm.valid">Find Oathello</button>                 
+                </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="minZoom" style="height:513px" (mapClick)="placeMarker($event)">
+                  <agm-marker [latitude]="latitude" [longitude]="longitude">
+                    <agm-info-window>
+                      <strong>{{Address}}</strong>
+                    </agm-info-window>
+                  </agm-marker>
+                </agm-map>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

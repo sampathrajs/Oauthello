@@ -1,0 +1,97 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header" data-background-color="red">
+                        <h4 class="title">Enter a payment method</h4>
+                        <p class="category">
+
+                            A payment method is needed to pay for services.
+                        </p>
+                    </div>
+                    <div class="card-content">
+                        <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8">
+                                <div class="card-container" style="margin-bottom: 50px;
+                                    margin-top: 50px;margin-left: -7px;"></div>
+                                <form (ngSubmit)="save()" [formGroup]="paymentForm" card container=".card-container" card-width="300" [messages]="messages"
+                                    [placeholders]="placeholders" [masks]="masks" formatting="false" debug="true">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">lock</i>
+                                        </span>
+                                        <label class="control-label">Powered by Strip Fully secure.</label>
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">credit_card</i>
+                                        </span>
+                                        <input type="text" formControlName="cardNumber" class="form-control" placeholder="xxxx xxxx xxxx 4422" card-number>
+                                        <span class="help-block" style="color:red" *ngIf="(paymentForm.get('cardNumber').touched || paymentForm.get('cardNumber').dirty)
+                                                && paymentForm.get('cardNumber').errors">
+                                            <span *ngIf="paymentForm.get('cardNumber').errors.required">
+                                                Please enter Card Number.
+                                            </span>
+                                            <span *ngIf="paymentForm.get('cardNumber').errors.minlength">
+                                                Card Number minimum 16 digits required.
+                                            </span>                                           
+                                        </span>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input type="text" name="first-name" card-name formControlName="firstName" class="form-control" placeholder="First Name">
+                                            <span class="help-block" style="color:red" *ngIf="(paymentForm.get('firstName').touched || paymentForm.get('firstName').dirty)
+                                            && paymentForm.get('firstName').errors">
+                                        <span *ngIf="paymentForm.get('firstName').errors.required">
+                                            Please enter First Name.
+                                        </span>                                                                                
+                                    </span>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text" name="last-name" card-name formControlName="lastName" class="form-control" placeholder="Last Name">
+                                            <span class="help-block" style="color:red" *ngIf="(paymentForm.get('lastName').touched || paymentForm.get('lastName').dirty)
+                                            && paymentForm.get('lastName').errors">
+                                        <span *ngIf="paymentForm.get('lastName').errors.required">
+                                                Please enter Last Name.
+                                        </span>
+                                        </span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input type="text" formControlName="cardExpDate" class="form-control" placeholder="Expiry" card-expiry>
+                                            <span class="help-block" style="color:red" *ngIf="(paymentForm.get('cardExpDate').touched || paymentForm.get('cardExpDate').dirty)
+                                            && paymentForm.get('cardExpDate').errors">
+                                        <span *ngIf="paymentForm.get('cardExpDate').errors.required">
+                                                Please enter Expiry Date.
+                                        </span>
+                                        </span>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text" formControlName="cardCvv" class="form-control" placeholder="CVV" card-cvc>
+                                            <span class="help-block" style="color:red" *ngIf="(paymentForm.get('cardCvv').touched || paymentForm.get('cardCvv').dirty)
+                                            && paymentForm.get('cardCvv').errors">
+                                        <span *ngIf="paymentForm.get('cardCvv').errors.required">
+                                                Please enter CVV Number.
+                                        </span>
+                                        <span *ngIf="paymentForm.get('cardCvv').errors.minlength">
+                                                Please enter minimum 3 digits.
+                                        </span>
+                                        </span>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn buttonColor" style="width:100%;" [disabled]="!paymentForm.valid">Next</button>
+
+                                    <div class="clearfix"></div>
+                                </form>
+                            </div>
+                            <div class="col-md-2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

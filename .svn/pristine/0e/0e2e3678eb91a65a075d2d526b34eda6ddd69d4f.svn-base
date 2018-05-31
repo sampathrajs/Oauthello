@@ -1,0 +1,68 @@
+<div class="main-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header" data-background-color="red">
+                        <h4 class="title">Company Info</h4>
+                        <p class="category">Please enter your company information</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8">
+                                <form novalidate (ngSubmit)="save()" [formGroup]="infoForm">
+                                    <div class="form-group form-black label-floating is-empty">
+                                        <label for="companyName" class="control-label">Company Name</label>
+                                        <input type="text" class="form-control" id="companyName" formControlName="companyName">
+                                        <span class="help-block" style="color:red" *ngIf="(infoForm.get('companyName').touched || infoForm.get('companyName').dirty)
+                                        && infoForm.get('companyName').errors">
+                                            <span *ngIf="infoForm.get('companyName').errors.required">
+                                                Please enter Company Name.
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div class="form-group form-black label-floating is-empty">
+                                        <label for="email" class="control-label">Email ID</label>
+                                        <input type="text" class="form-control" id="email" formControlName="email">
+                                        <span class="help-block" style="color:red" *ngIf="(infoForm.get('email').touched || infoForm.get('email').dirty)
+                                        && infoForm.get('email').errors">
+                                            <span *ngIf="infoForm.get('email').errors.required">
+                                                Please enter Email Address.
+                                            </span>
+                                            <span *ngIf="infoForm.get('email').errors.pattern">
+                                                Please enter valid Email Address.
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="location">Company Location</label>
+                                        <select class="form-control" id="location" formControlName="location">
+                                            <option value="" disabled>Select Location</option>
+                                            <option *ngFor="let country of Countries" value={{country.countryName}}>{{country.countryName}}</option>
+
+                                        </select>
+                                        <span class="help-block" style="color:red" *ngIf="(infoForm.get('location').touched || infoForm.get('location').dirty)
+                                        && infoForm.get('location').errors">
+                                            <span *ngIf="infoForm.get('location').errors.required">
+                                                Please select Location
+                                            </span>
+                                        </span>
+                                    </div>
+
+                                    <button type="submit" class="btn" style="width:100%;color:white;background-color:#C3282F" [disabled]="!infoForm.valid">Next</button>
+                                    <div>
+                                        <label>If you already have Oathello account,
+                                            <a href="">click here</a> to Sign In</label>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </form>
+                            </div>
+                            <div class="col-md-2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

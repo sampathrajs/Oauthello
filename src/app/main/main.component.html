@@ -1,0 +1,74 @@
+<div class="container" style="margin-top: 100px;">
+    <div class="row">
+      <section>
+          <div class="wizard">
+              <div class="wizard-inner">
+                  <div class="connecting-line"></div>
+                  <ul class="nav nav-tabs" role="tablist" style="background: border-box;">
+  
+                      <li role="presentation" class="active">
+                          <a href="#info" style="pointer-events: none;" data-toggle="tab"  aria-controls="info" role="tab" title="COMPANT INFO">
+                              <span class="round-tab">                      
+                                  <i class="material-icons iconalign">info</i>                                
+                              </span>
+                          </a>
+                      </li>
+  
+                      <li role="presentation" class="disabled">
+                          <a href="#newaccount" style="pointer-events: none;" data-toggle="tab" aria-controls="newaccount" role="newaccount" title="CREATE AN ACCOUNT">
+                              <span class="round-tab">                                  
+                                  <i class="material-icons iconalign">person</i>
+                              </span>
+                          </a>
+                      </li>
+                      <li role="presentation" class="disabled">
+                          <a href="#emailverification" style="pointer-events: none;" data-toggle="tab" aria-controls="emailverification" role="tab" title="VERIFY YOUR EMAIL">
+                              <span class="round-tab">                                  
+                                  <i class="material-icons iconalign">mail</i>
+                              </span>
+                          </a>
+                      </li>
+                      
+                      <li role="presentation" class="disabled">
+                          <a href="#payment" style="pointer-events: none;"  data-toggle="tab"  aria-controls="payment" role="tab" title="ADD A  PAYMENT METHOD">
+                              <span class="round-tab">                                  
+                                  <i class="material-icons iconalign">payment</i>
+                              </span>
+                          </a>
+                      </li>
+                   
+  
+                      <li role="presentation" class="disabled">
+                          <a href="#addnewuser" style="pointer-events: none;" data-toggle="tab" aria-controls="addnewuse" role="tab" title="ADD PEOPLE">
+                              <span class="round-tab">
+                                  <i class="material-icons iconalign">person_add</i>
+                              </span>
+                          </a>
+                      </li>
+                  </ul>
+              </div>
+  
+              <form role="form" style="margin-top: -100px;">
+                  <div class="tab-content">
+                      <div class="tab-pane active" role="tabpanel" id="info">
+                          <app-info></app-info>             
+                      </div>
+                      <div class="tab-pane" role="tabpanel" id="newaccount">
+                          <app-newaccount></app-newaccount>                          
+                      </div>
+                      <div class="tab-pane" role="tabpanel" id="emailverification">
+                         <app-verifyemail></app-verifyemail>                         
+                      </div>
+                      <div class="tab-pane" role="tabpanel" id="payment">
+                          <app-payment></app-payment>                         
+                      </div>
+                      <div class="tab-pane" role="tabpanel" id="addnewuser">
+                          <app-payment></app-payment>                         
+                      </div>
+                      <div class="clearfix"></div>
+                  </div>
+              </form>
+          </div>
+      </section>
+     </div>
+  </div>

@@ -1,0 +1,186 @@
+<div class="main-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header theme" data-background-color="red">
+            <h4 class="title">Create an Oathello Account</h4>
+
+          </div>
+          <div class="card-content">
+            <form novalidate (ngSubmit)="save()" [formGroup]="newaccountForm">
+              <div class="row">
+                <div class="col-md-4">
+                  <img class="img-responsive" style="height:200px;width:200px" src="../assets/img/faces/marc.jpg" />
+                </div>
+                <div class="col-md-8">
+                  <div class="form-group">
+                    <label>Description</label>
+                    <div class="form-group form-black label-floating is-empty">
+                      <textarea class="form-control" rows="5" formControlName="description" id="description"></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="input-group">
+                    <input type="text" class="form-control" formControlName="firstname" id="firstname" placeholder="First Name">
+                    <span class="input-group-addon">
+                      <i class="material-icons">person</i>
+                    </span>
+
+                  </div>
+                  <!-- <div class="form-group form-black label-floating is-empty" >
+                                        <label class="control-label">First Name</label>
+                                        <input type="text" class="form-control" formControlName="firstname" id="firstname">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">group</i>
+                                          </span>
+                                    </div> -->
+                </div>
+                <div class="col-md-3">
+                  <div class="input-group">
+                    <input type="text" class="form-control" formControlName="surname" id="surname" placeholder="SurName">
+                    <span class="input-group-addon">
+                      <i class="material-icons">person</i>
+                    </span>
+                  </div>
+                  <!-- <div class="form-group form-black label-floating is-empty">
+                                        <label class="control-label">SurName</label>
+                                        <input type="text" class="form-control" formControlName="surname" id="surname">
+                                    </div> -->
+                </div>
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <input type="text" class="form-control" formControlName="email" id="email" placeholder="Email">
+                    <span class="input-group-addon">
+                      <i class="material-icons">email</i>
+                    </span>
+
+                  </div>
+                  <!-- <div class="form-group form-black label-floating is-empty">
+                                        <label class="control-label">Email address</label>
+                                        <input type="email" class="form-control" formControlName="email" id="email">
+                                    </div> -->
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <input type="password" class="form-control" formControlName="password" id="password" placeholder="Password">
+                    <span class="input-group-addon">
+                      <i class="material-icons">remove_red_eye</i>
+                    </span>
+                  </div>
+                  <!-- <div class="form-group form-black label-floating is-empty">
+                                        <label class="control-label">Password</label>
+                                        <input type="password" class="form-control" formControlName="password" id="password">
+                                    </div> -->
+                </div>
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <input type="password" class="form-control" formControlName="confirmPassword" id="confirmPassword" placeholder="Confirm Password">
+                    <span class="input-group-addon">
+                      <i class="material-icons">remove_red_eye</i>
+                    </span>
+                  </div>
+                 
+                  <!-- <div class="form-group form-black label-floating is-empty">
+                                        <label class="control-label">Confirm Password</label>
+                                        <input type="password" class="form-control" formControlName="c_password" id="c_password">
+                                    </div> -->
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <input type="text" class="form-control" formControlName="m_number" id="m_number" placeholder="Mobile Number">
+                    <span class="input-group-addon">
+                      <i class="material-icons">phone_iphone</i>
+                    </span>
+                  </div>
+                  <!-- <div class="form-group form-black label-floating is-empty">
+                                        <label class="control-label">Mobile Number</label>
+                                        <input type="text" class="form-control" formControlName="m_number" id="m_number">
+                                    </div> -->
+                </div>
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <input type="text" class="form-control" formControlName="sn_number" id="sn_number" placeholder="Your Solicitor / Notary number here">
+                    <span class="input-group-addon">
+                      <i class="material-icons">person</i>
+                    </span>
+                  </div>              
+                  <!-- <div class="form-group form-black label-floating is-empty">
+                                        <label class="control-label">Your Solicitor / Notary number here</label>
+                                        <input type="text" class="form-control" formControlName="professional" id="professional">
+                                    </div> -->
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <label class="control-label">Are you Solicitor or Notary Please select here:</label>
+                  <div>
+                    <div class="row">
+                      <ul class="nav nav-pills nav-pills-info">
+                        <li>
+                          <a href="#pill2" data-toggle="tab">Solicitor</a>
+                        </li>
+                        <li>
+                          <a href="#pill3" data-toggle="tab">Notray</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="input-group">
+                    <input type="text" class="form-control" formControlName="fees" id="fees" placeholder="Professional fee per document">
+                    <span class="input-group-addon">
+                      <i class="material-icons">attach_money</i>
+                    </span>
+                  </div>
+                  <!-- <div class="form-group form-black label-floating is-empty">
+                                        <label class="control-label">Professional fee per document</label>
+                                        <input type="text" class="form-control" formControlName="fees" id="fees">
+                                    </div> -->
+                </div>
+              </div>
+              <hr>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Pick your work location</label>
+                    <div class="form-group form-black label-floating is-empty">
+                      <agm-map [latitude]="lat" [longitude]="lng" [zoom]="minZoom" style="height:300px">
+                        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+                      </agm-map>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="text-center">
+                <button type="submit" class="btn" style="color:white;background-color:#C3282F">Create Account</button>
+              </div>
+              <div class="text-center">
+                <label>Already have an account?</label>
+              </div>
+              <div class="text-center">
+                <a href="">Sign In</a>
+              </div>
+              <div class="clearfix"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="alert alert-danger" *ngIf="newaccountForm.get('confirmPassword').errors.MutchPassword">Password not match</div>
+{{newaccountForm.get('confirmPassword').errors|json}}
+{{newaccountForm.value|json}}

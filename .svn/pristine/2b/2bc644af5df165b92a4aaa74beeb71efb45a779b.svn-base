@@ -1,0 +1,91 @@
+<div class="main-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header" data-background-color="red">
+                        <h4 class="title">Enter a payment method</h4>
+                        <p class="category">                         
+                            
+                            A payment method is needed to pay for services.
+                            </p>
+                    </div>
+                    <div class="card-content">
+                        <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8">
+                                <form novalidate (ngSubmit)="save()" [formGroup]="paymentForm">  
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                          <i class="material-icons">lock</i>
+                                        </span>
+                                        <label  class="control-label">Powered by Strip Fully secure.</label>                                       
+                                      </div>
+                                      <div class="input-group">
+                                          <span class="input-group-addon">
+                                              <i class="material-icons">credit_card</i>
+                                          </span>
+                                          <input type="text" formControlName="cardNUmber" class="form-control" placeholder="xxxx xxxx xxxx 4422">
+                                          <!-- <input type="tel" autocomplete="cc-number" ccNumber class="form-control" id="cardNUmber" formControlName="cardNUmber">
+                                          <span class="help-block" style="color:red" *ngIf="(paymentForm.get('cardNUmber').touched || paymentForm.get('cardNUmber').dirty)
+                                          && paymentForm.get('cardNUmber').errors">
+                                               <span *ngIf="paymentForm.get('cardNUmber').errors.required">
+                                                   Please enter Card Number.
+                                               </span>                        
+                                           </span> -->
+                                                                                
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">                                                
+                                                <input type="text" formControlName="expiry" class="form-control" placeholder="Expiry">
+                                                </div>
+                                                <div class="col-md-6">                                                
+                                                    <input type="text" formControlName="cvv" class="form-control" placeholder="CVV">
+                                                    </div>
+                                        </div>
+                                        
+                                    <!-- <div class="form-group form-black label-floating is-empty">                                     
+
+                                        <label for="cardNUmber" class="control-label">Company Name</label>                                       
+                                        <input type="tel" autocomplete="cc-number" ccNumber class="form-control" id="cardNUmber" formControlName="cardNUmber">
+                                        <span class="help-block" style="color:red" *ngIf="(paymentForm.get('cardNUmber').touched || paymentForm.get('cardNUmber').dirty)
+                                        && paymentForm.get('cardNUmber').errors">
+                                             <span *ngIf="paymentForm.get('cardNUmber').errors.required">
+                                                 Please enter Card Number.
+                                             </span>                        
+                                         </span>
+                                    </div>
+                                    <div class="form-group form-black label-floating is-empty">
+                                        <label for="expiry" class="control-label">expiry ID</label>
+                                        <input type="tel" autocomplete="cc-exp"  class="form-control" id="expiry" formControlName="expiry">
+                                        <span class="help-block" style="color:red" *ngIf="(paymentForm.get('expiry').touched || paymentForm.get('expiry').dirty)
+                                        && paymentForm.get('expiry').errors">
+                                             <span *ngIf="paymentForm.get('expiry').errors.required">
+                                                 Please enter expiry Date.
+                                             </span>                        
+                                         </span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="location">Company Location</label>
+                                        <input type="tel" autocomplete="off" ccCvc class="form-control" id="cvv" formControlName="cvv">
+                                        <span class="help-block" style="color:red" *ngIf="(paymentForm.get('cvv').touched || paymentForm.get('cvv').dirty)
+                                        && paymentForm.get('cvv').errors">
+                                             <span *ngIf="paymentForm.get('cvv').errors.required">
+                                                 Please enter cvv Number .
+                                             </span>                        
+                                         </span>
+                                    </div>                            -->
+
+                                    <button type="submit" class="btn" style="width:100%;color:white;background-color:#C3282F" [disabled]="!paymentForm.valid">Next</button>
+                                   
+                                    <div class="clearfix"></div>
+                                </form>
+                            </div>
+                            <div class="col-md-2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
